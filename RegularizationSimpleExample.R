@@ -1,7 +1,7 @@
 #==========================================================================
 # Author: Francisco Javier Arceo
 # Purpose: This is a small and edifying example of L1 and L2 regularization
-#   using the glmnet implementatino in R.
+#   using the glmnet implementation in R.
 # Last Update Date: March 23rd 2015
 #==========================================================================
 require(glmnet)
