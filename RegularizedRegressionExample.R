@@ -80,8 +80,8 @@ pdf('LassoModel2.pdf',width=7,height=7)
 plot(lasso_cvmod,xlab='AUC as a function of log(Lambda) \n LASSO',ylim=c(0.5,1))
 dev.off()
 #===========================================================================================
-ylasso <- predict(ridge_cvmod,newx=xs,s='lambda.min')
-yridge <- predict(lasso_cvmod,newx=xs,s='lambda.min')
+yridge <- predict(ridge_cvmod,newx=xs,s='lambda.min')
+ylasso <- predict(lasso_cvmod,newx=xs,s='lambda.min')
 yolsmd <- predict(ridge_cvmod,newx=xs,s=min(ridge_cvmod$lambda)) # This is closest to OLS
 #===========================================================================================
 v1 <- round(auc(ydep[validfilt],yolsmd[validfilt]),4)
@@ -102,12 +102,12 @@ lbls <- paste(c('OLS','Ridge','LASSO','Random','Perfect'),' AUC=',c(v1,v2,v3,0.5
 par(mfrow=c(1,1))
 
 jpeg('AUCbyModel.jpeg', width=960,height=960)
-plot(prf1, colorize = FALSE,col='deepskyblue',main='Model Performance by Regression Method \n (Hold Out)')
+plot(prf1, colorize = FALSE, col='deepskyblue',main='Model Performance by Regression Method \n (Hold Out)')
 plot(prf2, add = TRUE, colorize = FALSE,col='red')
 plot(prf3, add = TRUE, colorize = FALSE,col='green')
 plot(prf4, add = TRUE, colorize = FALSE,col='purple3')
 grid(5,5,'gray44');abline(0,1,col='black')
-legend('bottomright',lbls,col=c('deepskyblue','red','green','purple3'),lty=c(1,1,1))
+legend('bottomright', lbls, col=c('deepskyblue','red','green','black','purple3'), lty=c(1,1,1,1))
 dev.off()
 
 smrdf <- data.frame(Val=c(0.5,v1,v2,v3,1),Type=c('Random','OLS','Ridge','LASSO','Perfect'))
