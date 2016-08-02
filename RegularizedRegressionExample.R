@@ -36,15 +36,6 @@ t0 <- Sys.time()
 
 print("...running models")
 # Useful just for plotting
-ols_model <- cv.glmnet(x=xs[trainfilt==1,],
-                       y=ydep[trainfilt==1],     
-                       alpha  = 0,
-                       nfolds=3,
-                       lambda=seq(0,1,length=50),
-                       family='binomial',
-                       type.measure='auc',
-                       parallel=TRUE)
-print("ols finished...")
 ridge_model <- glmnet(x= xs[trainfilt==1,1:60],           
                       y=ydep[trainfilt==1],     
                       alpha  = 0,nlambda=100,
