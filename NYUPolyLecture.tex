@@ -4,60 +4,68 @@
 \usepackage{amsmath} 
 \usepackage{beamerthemesplit} 
 
+\begin{document}
+
 \title{Data Mining \& Machine Learning}  
 \subtitle{Regularization Methods for Regression}
-\author{Francisco Javier Arceo \\
-        Senior Data Scientist}
-\institute{NYU Polytechnic School of Engineering \\ Commonwealth Bank of Australia}
+\author{Francisco Javier Arceo \texorpdfstring{\\ 
+        Data Scientist}{} }
+\institute{NYU Polytechnic School of Engineering \texorpdfstring{\\  Commonwealth Bank of Australia}{} }
 \date{March 23, 2015}
 
-\begin{document}
+
 \begin{frame}
 \titlepage
 \end{frame}
-\note{Talk for 30 minutes} % Add notes to yourself that will be displayed when
+
+\note{Talk for 30 minutes} 
+% Add notes to yourself that will be displayed when
 % typeset with the notes or notesonly class options
 
 \section[Regularization Methods for Regression]{}
 \begin{frame}
-\tableofcontents
+	\tableofcontents
 \end{frame}
 
 % Slide 1
 \section{L2 Norm: Ridge}
 \subsection{Motivation}
+
 \begin{frame}
-\frametitle{Ridge Regression}   % Insert frame title between curly braces
+	\frametitle{Ridge Regression}   % Insert frame title between curly braces
+	\begin{equation}
+		\hat{\beta}_{ridge} = \argmin_{\beta} \sum_{i=1}^{n} (y_{i} - \sum_{j=1}^{p}\beta_{j}x_{ij})^2 + \lambda \sum_{j=1}^{p}\beta_{j}^2
+	\end{equation}
+
 \begin{equation}
-\hat{\beta}_{ridge} = \argmin_{\beta} \sum_{i=1}^{n} (y_{i} - \sum_{j=1}^{p}\beta_{j}x_{ij})^2 + \lambda \sum_{j=1}^{p}\beta_{j}^2
+	\boldsymbol{\hat{\beta}}_{ridge} = \argmin_{\beta} (\boldsymbol{y - x}^{T} \boldsymbol{\beta})^2 + \boldsymbol{\lambda \beta}^2
+\end{equation}
+
+\begin{itemize}
+	\item<1-> First published by the Russian Mathematician Andrey Nikolayevich Tikhonov (1906-1993) in 1943 % Use Next Page to go to Point 2
+	\item<2-> Originally called Tikhonov regularization % Use Next Page to go to Point 3
+	\item<3-> First introduced to the statistical literature in 1970 by Hoerl and Kennard (\emph{Technometrics})
+	\item<4-> Method to deal with non-invertible \pmb{(X'X)} matrices
+	\end{itemize}
+\end{frame}
+                                                   
+% Slide 2
+\subsection{Framework}
+\begin{frame}
+	\frametitle{Ridge Regression}   % Insert frame title between curly braces
+
+	\begin{equation}
+		\hat{\beta}_{j,ridge} = \frac{\sum_{i=1}^{n} (x_{ij} - \bar{x_j})(y_i - \bar{y})} {\sum_{i=1}^{n} (x_{ij} - \bar{x_j})^2} \frac{1}{1+\lambda} = \frac{\hat{\beta}_{j,ols}} {1 + 	\lambda}
 \end{equation}
 \begin{equation}
-\boldsymbol{\hat{\beta}}_{ridge} = \argmin_{\beta} (\boldsymbol{y - x}^{T} \boldsymbol{\beta})^2 + \boldsymbol{\lambda \beta}^2
+	\boldsymbol{\hat{\beta}}_{ridge} = \boldsymbol{ (X'X+\lambda I)^{-1} X'y}
 \end{equation}
 \begin{itemize}
-\item<1-> First published by the Russian Mathematician Andrey Nikolayevich Tikhonov (1906-1993) in 1943 % Use Next Page to go to Point 2
-\item<2-> Originally called Tikhonov regularization % Use Next Page to go to Point 3
-\item<3-> First introduced to the statistical literature in 1970 by Hoerl and Kennard (\emph{Technometrics})
-\item<4-> Method to deal with non-invertible \pmb{(X'X)} matrices
-                                                   \end{itemize}
-                                                   \end{frame}
-                                                   
-                                                   % Slide 2
-                                                   \subsection{Framework}
-                                                   \begin{frame}
-                                                   \frametitle{Ridge Regression}   % Insert frame title between curly braces
-                                                   \begin{equation}
-                                                   \hat{\beta}_{j,ridge} = \frac{\sum_{i=1}^{n} (x_{ij} - \bar{x_j})(y_i - \bar{y})} {\sum_{i=1}^{n} (x_{ij} - \bar{x_j})^2} \frac{1}{1+\lambda} = \frac{\hat{\beta}_{j,ols}} {1 + \lambda}
-                                                   \end{equation}
-                                                   \begin{equation}
-                                                   \boldsymbol{\hat{\beta}}_{ridge} = \boldsymbol{ (X'X+\lambda I)^{-1} X'y}
-                                                  \end{equation}
-                                                  \begin{itemize}
-                                                  \item<1-> Equation (3) is a special case of an orthonormal design matrix 
-                                                  \item<2-> $\lambda$ is a penalty term that is added to the diagonal elements of $\boldsymbol{(X'X)}$ and $\boldsymbol{I}$ is an (nxn) matrix
-\item<3-> Question: what happens when $\lambda$=0?
-\item<4-> Back to Ordinary Least-Squares solution!
-  \end{itemize}
+		\item<1-> Equation (3) is a special case of an orthonormal design matrix 
+		\item<2-> $\lambda$ is a penalty term that is added to the diagonal elements of $\boldsymbol{(X'X)}$ and $\boldsymbol{I}$ is an (nxn) matrix
+		\item<3-> Question: what happens when $\lambda$=0?
+		\item<4-> Back to Ordinary Least-Squares solution!
+	\end{itemize}
 \end{frame}
 
 % Slide 3
@@ -181,8 +189,8 @@ S(\hat{\beta},\lambda) =\begin{cases}
 \begin{frame}
 \frametitle{LASSO Model Performance}
 \framebox{
-  \includegraphics[height=2.0in,width=2.0in]{LassoModel1}
-  \includegraphics[height=2.0in,width=2.0in]{LassoModel2}
+%  \includegraphics[height=2.0in,width=2.0in]{LassoModel1}
+ % \includegraphics[height=2.0in,width=2.0in]{LassoModel2}
 }
 \end{frame}
 
@@ -190,8 +198,8 @@ S(\hat{\beta},\lambda) =\begin{cases}
 \begin{frame}
 \frametitle{Ridge Model Performance}
 \framebox{
-  \includegraphics[height=2.0in,width=2.0in]{RidgeModel1}
-  \includegraphics[height=2.0in,width=2.0in]{RidgeModel2}
+%  \includegraphics[height=2.0in,width=2.0in]{RidgeModel1}
+ % \includegraphics[height=2.0in,width=2.0in]{RidgeModel2}
 }
 \end{frame}
 
@@ -200,8 +208,8 @@ S(\hat{\beta},\lambda) =\begin{cases}
 \begin{frame}
 \frametitle{Comparison of Ridge, LASSO, and OLS}
 \framebox{
-  \includegraphics[height=2.0in,width=2.0in]{ModelPerformance}
-  \includegraphics[height=2.0in,width=2.0in]{AUCbyModel}
+%  \includegraphics[height=2.0in,width=2.0in]{ModelPerformance}
+%  \includegraphics[height=2.0in,width=2.0in]{AUCbyModel}
 }
 \end{frame}
 
