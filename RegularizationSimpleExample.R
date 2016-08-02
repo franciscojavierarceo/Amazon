@@ -4,6 +4,7 @@
 #   using the glmnet implementation in R.
 # Last Update Date: March 23rd 2015
 #==========================================================================
+library(MASS)
 require(glmnet)
 #==========================================================================
 n <- 1e3 # Setting sample size

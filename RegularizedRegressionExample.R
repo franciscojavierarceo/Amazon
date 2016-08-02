@@ -14,7 +14,7 @@ require(parallel)
 require(doParallel)
 require(ROCR)
 #===========================================================================================
-setwd('/Users/franciscojavierarceo/Projects/K/Amazon/')
+setwd('~/GitHub/Regularization/')
 #===========================================================================================
 df1 <- read.csv('train.csv')
 head(df1)
@@ -33,23 +33,30 @@ print(dim(xs))
 detectCores(all.tests=TRUE)
 registerDoParallel(cores=all)
 t0 <- Sys.time()
+
+print("...running models")
 # Useful just for plotting
 ols_model <- cv.glmnet(x=xs[trainfilt==1,],
                        y=ydep[trainfilt==1],     
                        alpha  = 0,
-                       nfolds=1,
+                       nfolds=3,
                        lambda=seq(0,1,length=50),
                        family='binomial',
                        type.measure='auc',
                        parallel=TRUE)
+print("ols finished...")
 ridge_model <- glmnet(x= xs[trainfilt==1,1:60],           
                       y=ydep[trainfilt==1],     
                       alpha  = 0,nlambda=100,
                       family='binomial')
+
+print("ridge finished...")
 lasso_model <- glmnet(x= xs[trainfilt==1,1:60],           
                       y=ydep[trainfilt==1],     
                       alpha  = 1,nlambda=100,
                       family='binomial')
+
+print("lasso finished...")
 ridge_cvmod <- cv.glmnet(x=xs[trainfilt==1,],     # Specifying sparse input matrix
                          y=ydep[trainfilt==1],    # Specifying dependent variable
                          alpha  = 0,              # Alpha=1 -> Lasso; Alpha=0 -> Ridge
@@ -57,6 +64,7 @@ ridge_cvmod <- cv.glmnet(x=xs[trainfilt==1,],     # Specifying sparse input matr
                          nlambda= 50,             # Number of lambda values to try
                          nfolds=10,               # Number of crossfold validations
                          family='binomial')
+print("optimal lasso finished...")
 lasso_cvmod <- cv.glmnet(x=xs[trainfilt==1,],     # Specifying sparse input matrix
                          y=ydep[trainfilt==1],     # Specifying dependent variable
                          alpha  = 1.0,             # Alpha=1 -> Lasso; Alpha=0 -> Ridge
@@ -93,13 +101,16 @@ md1 <- prediction( yolsmd[validfilt],ydep[validfilt])
 md2 <- prediction( yridge[validfilt],ydep[validfilt])
 md3 <- prediction( ylasso[validfilt],ydep[validfilt])
 md4 <- prediction( ydep[validfilt],ydep[validfilt])
+
 prf1 <- performance( md1, "tpr", "fpr" )
 prf2 <- performance( md2, "tpr", "fpr" )
 prf3 <- performance( md3, "tpr", "fpr" )
 prf4 <- performance( md4, "tpr", "fpr" )
+
 lbls <- paste(c('OLS','Ridge','LASSO','Random','Perfect'),' AUC=',c(v1,v2,v3,0.5,1),sep=' ')
 par(mfrow=c(1,1))
-jpeg('AUCbyModel.jpeg',width=960,height=960)
+
+jpeg('AUCbyModel.jpeg', width=960,height=960)
 plot(prf1, colorize = FALSE,col='deepskyblue',main='Model Performance by Regression Method \n (Hold Out)')
 plot(prf2, add = TRUE, colorize = FALSE,col='red')
 plot(prf3, add = TRUE, colorize = FALSE,col='green')
@@ -107,6 +118,7 @@ plot(prf4, add = TRUE, colorize = FALSE,col='purple3')
 grid(5,5,'gray44');abline(0,1,col='black')
 legend('bottomright',lbls,col=c('deepskyblue','red','green','purple3'),lty=c(1,1,1))
 dev.off()
+
 smrdf <- data.frame(Val=c(0.5,v1,v2,v3,1),Type=c('Random','OLS','Ridge','LASSO','Perfect'))
 smrdf$Type <- factor(smrdf$Type,levels=smrdf$Type[order(smrdf$Val,decreasing=T)])
 pdf('ModelPerformance.pdf',width=7,height=7)
