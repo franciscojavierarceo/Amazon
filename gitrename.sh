@@ -1,6 +1,6 @@
 #!/bin/sh
 
-git filter-branch --env-filter -f '
+git filter-branch --env-filter '
 OLD_EMAIL="Francsico.Arceo@cba.com.au"
 CORRECT_NAME="Francisco Arceo"
 CORRECT_EMAIL="arceofrancisco@gmail.com"
@@ -14,7 +14,7 @@ then
     export GIT_AUTHOR_NAME="$CORRECT_NAME"
     export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
 fi
-' --tag-name-filter cat -- --branches --tags
+' --tag-name-filter cat -- --branches --tags --f
 
 # Run this using the following
 # source gitrename.sh
