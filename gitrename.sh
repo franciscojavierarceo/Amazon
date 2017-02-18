@@ -1,6 +1,6 @@
 #!/bin/sh
 
-git filter-branch --env-filter '
+git filter-branch --env-filter -f '
 OLD_EMAIL="Francsico.Arceo@cba.com.au"
 CORRECT_NAME="Francisco Arceo"
 CORRECT_EMAIL="arceofrancisco@gmail.com"
