@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {2}{L2 Norm: Ridge}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Motivation}{3}{0}{1}
+\beamer@subsectionintoc {2}{2}{Framework}{7}{0}{1}
+\beamer@subsectionintoc {2}{3}{Similarities}{11}{0}{1}
+\beamer@sectionintoc {3}{L1 Norm: Lasso}{14}{0}{2}
+\beamer@subsectionintoc {3}{1}{Similarities}{14}{0}{2}
+\beamer@subsectionintoc {3}{2}{Motivation}{17}{0}{2}
+\beamer@subsectionintoc {3}{3}{Framework}{21}{0}{2}
+\beamer@sectionintoc {4}{Regularization Methods}{24}{0}{3}
+\beamer@subsectionintoc {4}{1}{Important Facts}{24}{0}{3}
+\beamer@subsectionintoc {4}{2}{Empirical Example: Kaggle's Amazon Competition}{36}{0}{3}
+\beamer@subsectionintoc {4}{3}{Amazon Data:LASSO Model}{42}{0}{3}
+\beamer@subsectionintoc {4}{4}{Amazon Data: Ridge Model}{43}{0}{3}
+\beamer@subsectionintoc {4}{5}{Amazon Data: Performance}{44}{0}{3}
+\beamer@sectionintoc {5}{Some Resources}{45}{0}{4}

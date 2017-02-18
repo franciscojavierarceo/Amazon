@@ -1,0 +1,62 @@
+\beamer@endinputifotherversion {3.36pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\sectionentry {1}{Regularization Methods for Regression}{2}{Regularization Methods for Regression}{0}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {2}{L2 Norm: Ridge}{3}{L2 Norm: Ridge}{0}}
+\headcommand {\beamer@sectionpages {2}{2}}
+\headcommand {\beamer@subsectionpages {2}{2}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{3}{Motivation}}\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\slideentry {2}{1}{1}{3/6}{Motivation}{0}}
+\headcommand {\beamer@framepages {3}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{7}{Framework}}\headcommand {\beamer@subsectionpages {3}{6}}
+\headcommand {\slideentry {2}{2}{1}{7/10}{Framework}{0}}
+\headcommand {\beamer@framepages {7}{10}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{11}{Similarities}}\headcommand {\beamer@subsectionpages {7}{10}}
+\headcommand {\slideentry {2}{3}{1}{11/13}{Similarities}{0}}
+\headcommand {\beamer@framepages {11}{13}}
+\headcommand {\sectionentry {3}{L1 Norm: Lasso}{14}{L1 Norm: Lasso}{0}}
+\headcommand {\beamer@sectionpages {3}{13}}
+\headcommand {\beamer@subsectionpages {11}{13}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{14}{Similarities}}\headcommand {\beamer@subsectionpages {14}{13}}
+\headcommand {\slideentry {3}{1}{1}{14/16}{Similarities}{0}}
+\headcommand {\beamer@framepages {14}{16}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{17}{Motivation}}\headcommand {\beamer@subsectionpages {14}{16}}
+\headcommand {\slideentry {3}{2}{1}{17/20}{Motivation}{0}}
+\headcommand {\beamer@framepages {17}{20}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{21}{Framework}}\headcommand {\beamer@subsectionpages {17}{20}}
+\headcommand {\slideentry {3}{3}{1}{21/23}{Framework}{0}}
+\headcommand {\beamer@framepages {21}{23}}
+\headcommand {\sectionentry {4}{Regularization Methods}{24}{Regularization Methods}{0}}
+\headcommand {\beamer@sectionpages {14}{23}}
+\headcommand {\beamer@subsectionpages {21}{23}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{24}{Important Facts}}\headcommand {\beamer@subsectionpages {24}{23}}
+\headcommand {\slideentry {4}{1}{1}{24/28}{Important Facts}{0}}
+\headcommand {\beamer@framepages {24}{28}}
+\headcommand {\slideentry {4}{1}{2}{29/35}{Important Facts}{0}}
+\headcommand {\beamer@framepages {29}{35}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{36}{Empirical Example: Kaggle's Amazon Competition}}\headcommand {\beamer@subsectionpages {24}{35}}
+\headcommand {\slideentry {4}{2}{1}{36/41}{Empirical Example: Kaggle's Amazon Competition}{0}}
+\headcommand {\beamer@framepages {36}{41}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{42}{Amazon Data:LASSO Model}}\headcommand {\beamer@subsectionpages {36}{41}}
+\headcommand {\slideentry {4}{3}{1}{42/42}{Amazon Data:LASSO Model}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\beamer@subsectionentry {0}{4}{4}{43}{Amazon Data: Ridge Model}}\headcommand {\beamer@subsectionpages {42}{42}}
+\headcommand {\slideentry {4}{4}{1}{43/43}{Amazon Data: Ridge Model}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\beamer@subsectionentry {0}{4}{5}{44}{Amazon Data: Performance}}\headcommand {\beamer@subsectionpages {43}{43}}
+\headcommand {\slideentry {4}{5}{1}{44/44}{Amazon Data: Performance}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\sectionentry {5}{Some Resources}{45}{Some Resources}{0}}
+\headcommand {\beamer@sectionpages {24}{44}}
+\headcommand {\beamer@subsectionpages {44}{44}}
+\headcommand {\slideentry {5}{0}{1}{45/52}{}{0}}
+\headcommand {\beamer@framepages {45}{52}}
+\headcommand {\beamer@partpages {1}{52}}
+\headcommand {\beamer@subsectionpages {45}{52}}
+\headcommand {\beamer@sectionpages {45}{52}}
+\headcommand {\beamer@documentpages {52}}
+\headcommand {\def \inserttotalframenumber {15}}
